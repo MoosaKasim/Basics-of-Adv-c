@@ -1,0 +1,48 @@
+/* 
+Name        :   MK MOOSA KASIM
+Date        :   05-01-2022
+Description :   Program to count number of set bits in a given number and print parity.
+Input       :   Enter the number : 7
+Output      :   Number of set bits = 3
+                Bit parity is Odd
+*/
+
+#include <stdio.h>
+#define bool int
+
+unsigned int countSetBits(unsigned int n)
+{
+    unsigned int count = 0;
+    while (n) {
+        count += n & 1;
+        n >>= 1;
+    }
+    return count;
+}
+
+
+bool getParity(unsigned int n)
+{
+bool parity = 0;
+while (n)
+{
+parity = !parity;
+n      = n & (n-1);
+}
+return parity;
+}
+
+
+
+int main()
+{
+  int n;
+   printf("Enter the number : ");
+   scanf("%d", &n);
+   printf("Number of set bits = %d\n",countSetBits(n));
+   printf("Bit parity is %s\n",
+           (getParity(n)? "Odd" : "Even"));
+   getchar();
+    return 0;
+
+}
