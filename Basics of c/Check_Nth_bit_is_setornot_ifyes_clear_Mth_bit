@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main()
+{
+int num,N,m;
+printf("Enter the number: ");
+scanf("%d",&num);
+printf("Enter 'N': ");
+scanf("%d",&N);
+printf("Enter 'M': ");
+scanf("%d",&m);
+if(num & (1<<N))
+{
+
+int clearBit(int num, int m)
+{
+return (num &= ~(1 << m));
+}
+printf("Updated value of num is %d\n", clearBit(num, m));
+}
+else
+printf("Updated value of num is %d\n", num);
+return 0;
+
+}
+
