@@ -1,0 +1,43 @@
+/*
+Name        :   MK MOOSA KASIM
+Date        :   22-1-2022
+Description :   WAP to implement your own isblank() function.
+                c-type library functions check whether ch, which must have the value of an unsigned char or EOF, falls into a certain character class according to the current locale.
+isblank() - checks for a blank character; that is, a space or a tab.
+Input       :   Enter the character : a
+Output      :   The character 'a' is not a blank character.
+
+*/
+
+
+#include<stdio.h>
+int my_blank(int c)
+{
+    if(c>=65 && c<=90 || c>=97 && c<=122 || c>=33 && c<=64 || c>=91 && c<=96)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int main()
+{
+    char ch;
+    int ret;
+    printf("Enter the charachter: ");
+    scanf("%c",&ch);
+    ret = my_blank(ch);
+    if(ret==1)
+    {
+        printf("Entered character is not blank character \n");
+    }
+    else
+    {
+        printf("Entered character '%c' is a blank character \n",ch);
+
+    }
+
+}
