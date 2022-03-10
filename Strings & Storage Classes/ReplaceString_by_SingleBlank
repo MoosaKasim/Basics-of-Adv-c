@@ -1,0 +1,49 @@
+/*
+
+Name        :   MK MOOSA KAIM
+Date        :   08-02-2022
+Description :   replace each string of one or more blanks by a single blank
+Input       :   Pointers         are      sharp           knives.
+Output      :   Pointers are sharp knives.
+
+*/
+
+#include <stdio.h>
+
+void replace_blank(char *);
+
+int main()
+{
+    char str[500];
+    
+   /*printf("Enter the string with more spaces in between two words\n");
+    */scanf("%[^\n]", str);
+    
+    replace_blank(str);
+ }
+
+
+void replace_blank(char *str)
+{
+    int i=0,countspace=0;;
+    while(str[i]!='\0')
+    {
+        if(str[i]==' ')
+        {
+            countspace++;
+            i++;
+            continue;
+        }
+        if(countspace>0)
+        {
+            printf(" %c",str[
+            countspace=0;
+        }
+        else
+        {
+            printf("%c",str[i]);
+        }
+        i++;
+    }
+ 
+}
