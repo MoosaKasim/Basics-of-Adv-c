@@ -1,0 +1,39 @@
+/*
+Name        :   MK MOOSA KASIM
+Date        :   18-01-2022
+Description :   WAP to replace 'n' bits of a given number
+Input       :   Enter num, n and val: 15 2 1
+Output      :   Result = 13
+*/
+
+#include<stdio.h>
+
+int replace_nbits(int num, int n, int val)
+{
+    int res, mask, mask2, i;
+    mask = 0x01; 
+    mask2;
+    for (i = 1 ; i < n; i++) {
+        mask |= (0x01 << i); 
+    }
+	mask2= ~mask;
+
+    /* mask n bits of num with 0s, 
+     * get only n bits of val
+     * OR the above two values
+     * to replace n LSB bits of num's with val's
+     */
+    
+    res = (num & mask2) | (val & mask);
+    return res;
+}
+
+int main()
+{
+    int num,n,val,res = 0;
+    printf("Enter num, n and val : ");
+    scanf("%d%d%d", &num, &n, &val);
+    res = replace_nbits(num, n, val); 
+		printf("Result = %d \n", res);
+
+ }
