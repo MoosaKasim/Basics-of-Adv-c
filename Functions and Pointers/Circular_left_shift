@@ -1,0 +1,45 @@
+/*
+Name            :   MK MOOSA KASIM
+Date            :   21-01-2022
+Description     :   Program to Implement Circular Left shift 
+Input           :   Enter num: 12
+                    Enter n : 3
+Output          :   Result in Binary: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0
+
+*/
+
+#include <stdio.h>
+
+int circular_left(unsigned int num, int n)
+{
+    return   ((num & (~0 << (sizeof(int) * 8 - n))) >> (sizeof(int) * 8 - n))  | (num << n)  ; 
+    
+}
+
+int print_bits(int ret)
+{
+    unsigned mask;
+
+	for(mask = (1 << (sizeof(int) * 8 - 1)); mask; mask >>= 1)
+	{
+		(ret & mask) ? putchar('1'): putchar('0');
+        printf(" ");
+    }
+    
+    
+}
+int main()
+{
+    int num, n, ret;
+    
+    printf("Enter the num, n:");
+    scanf("%d %d", &num, &n);
+    
+    /*printf("Enter n:");
+    scanf("%d", &n);
+    */
+    
+    ret = circular_left(num, n);
+    printf("Result in Binary : ");
+    print_bits(ret);
+}
