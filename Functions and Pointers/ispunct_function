@@ -1,0 +1,43 @@
+/*
+
+Name        :   MK MOOSA KASIM
+Date        :   22-1-2022
+Description :   WAP to implement your own ispunct() function
+Input       :   Enter the character: a
+Output      :   Entered character is not punctuation character
+
+*/
+
+#include<stdio.h>
+
+int is_punct(int c)
+{
+    if( c>=33 && c<=47 || c>=58 && c<=64 )
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+
+}
+
+int main()
+{
+    char ch;
+    int ret;
+    printf("Enter the charachter: ");
+    scanf("%c",&ch);
+    ret = is_punct(ch);
+    if(ret==1)
+    {
+        printf("Entered character is punctuation character \n");
+    }
+    else
+    {
+        printf("Entered character is not punctuation character \n");
+
+    }
+
+}
