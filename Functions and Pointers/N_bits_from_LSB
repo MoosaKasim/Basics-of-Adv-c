@@ -1,0 +1,41 @@
+/*
+Name            :   MK MOOSA KASIM
+Date            :   21-01-2022
+Description     :   To print 'n' bits from LSB of a number
+Input           :   Enter num, n : 15 4
+Output          :   Binary form of 15 : 1 1 1 1
+*/
+
+
+#include<stdio.h>
+int print_bits(int num, int n)
+{
+    unsigned mask;
+for (mask = (1 << (sizeof(int) * 8 - 1)); mask; mask >>= 1)
+	{
+		if (mask <= ((1 << n)-1) )
+{
+			if (num & mask) 
+			{
+				putchar('1');
+			}
+			else		
+			{
+				putchar('0');
+			}
+	
+printf (" ");
+ }
+}
+}
+
+int main()
+{
+    int num, n;
+    
+    printf("Enter num, n : ");
+    scanf("%d %d", &num, &n);
+    
+    printf("Binary form of %d: ",num);
+    print_bits(num, n);
+ }
