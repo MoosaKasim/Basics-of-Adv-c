@@ -1,0 +1,64 @@
+/*
+
+Name        :   MK MOOSA KASIM
+Date        :   27-1-2022
+Description :   WAP to find 3rd largest element in an array
+Input       :   Enter the size of the Array : 4
+		            Enter the elements into the array: 66 22 11 3
+Output      :   Third largest element of the array is 11
+
+*/
+
+#include<stdio.h>
+
+
+int third_smallest(int *arr, int size)
+{
+        int i, index = 0;
+        int array[size];
+       
+        int largest = arr[0];
+        for(i = 0; i < size; i++)
+        {
+                if (arr[i] > largest)
+                {
+                        largest = arr[i];
+                       
+                }
+        }
+        int second = 0;
+        for (i = 0; i < size; i++)
+        {
+                if (arr[i] > second  && arr[i] < largest)
+                {
+                        second = arr[i];
+                        
+                }
+        }
+        int third = 0;
+        for (i = 0; i < size; i++)
+        {
+                if (arr[i] > third && arr[i] < second)
+                {
+                        third = arr[i];
+                }
+        }
+        return third;
+}
+
+int main()
+{
+    int size, ret,i;
+    printf("Enter the size of the array :");
+    scanf("%d", &size);
+
+    int arr[size];
+    printf("Enter the element into the  array : ");
+for (i=0; i<size; i++)
+{
+    scanf("%d", &arr[i]);
+}
+     ret = third_smallest(arr, size);
+    
+     printf("Third largest element of the array is %d\n", ret);
+}
