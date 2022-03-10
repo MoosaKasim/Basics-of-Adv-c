@@ -1,0 +1,44 @@
+/*
+
+Name        :   MK MOOSA KASIM
+Date        :   10-02-2022
+Description :   WAP to implement getword function
+Input       :   Welcome to Emertxe
+Output      :   You entered Welcome and the length is 7
+
+*/
+
+#include <stdio.h>
+
+
+int getword(char *str)
+{
+    int len = 0;
+
+
+ while(*str++ != '\0')
+    {
+       
+        if(*str == ' ')
+        {   
+           *str='\0';
+        }
+        len++;
+    }
+    
+
+return len;
+}
+
+int main()
+{
+    int len = 0;
+	    char str[100];
+
+		printf("Enter the string : \n");
+		scanf(" %[^\n]", str);
+
+        len = getword(str);
+
+        printf("You entered %s and the length is %d\n", str, len);
+}
