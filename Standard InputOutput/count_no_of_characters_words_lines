@@ -1,0 +1,70 @@
+/*
+
+Name        :   MK MOOSA KASIM
+Date        :   05-02-2022
+Description :  WAP to count no. of characters, words and lines, entered through stdin
+
+Input       :  Hello world
+                Dennis Ritchie
+                Linux
+Output      :  Character count : 33
+            Line count : 3
+                Word count : 5
+Do you want to continue(y/Y) : y
+ 
+
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+char option;
+do
+{
+
+	int flag = 0, lines = 0, words = 0, characters = 0;
+	char c, previouscharacter = ' ';
+
+	do
+	{
+		c = getc(stdin);
+
+		characters++;
+
+		if (c == '\n')
+		{
+			lines++;
+		}
+		
+		if ((previouscharacter != ' ' &&  previouscharacter != '\n' && previouscharacter != '\t') && (c == ' ' || c == '\n'|| c == '\t')) 
+		{
+		
+						words++;
+		}
+		
+		if (c == EOF)
+		{
+			characters--;
+			brek;
+		}
+		previouscharacter = c;
+
+	} while (1);
+
+	if (previouscharacter != ' ' &&  previouscharacter != '\n' && previouscharacter != '\t')
+	{
+		words++;
+
+	}
+
+printf("\n");       
+printf("Character count : %d\nLine count : %d\nWord count : %d\n", characters, lines, words);
+printf("Do you want to continue(y/Y) : ");
+scanf("%c", &option);
+}
+    while (option == 'y' || option == 'Y');
+	return 0;
+
+}
