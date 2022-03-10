@@ -1,0 +1,43 @@
+/*
+Name 			:	MK MOOSA KASIM
+Date			:	20-01-2022
+Input			:	Enter num, n and val: 12 3 4
+Output			:	Result = 3
+Description		:	Get 'n' bits from the given position of a number. In order to get 
+				1. Mask 'n' bit of 'num' with 1's.
+				2. Shifting the mask value to position
+				3. Using 'AND' the num with only shifted 'n' bits of 1's 
+     				4. To get n bit's value from position pos 
+     				5. Right shift the value (pos-n+1) to get 'n' bits.
+*/
+
+#include<stdio.h>
+
+int get_nbits_from_pos(int num, int n, int pos)
+{
+    int result, mask, mask2, i;
+    mask = 0x01; /* Mask */
+   
+    for (i = 1 ; i < n; i++) {  /* mask n bits of num with 1s */
+
+    mask |= (0x01 << i); /* Mask */
+}
+    
+    mask2 = (mask << (pos-n+1)); /* shift mask to position pos */
+    
+    result = ((num & mask2) >> (pos-n+1));
+    return result;
+}
+
+int main()
+{
+
+		int num, n, pos, res = 0;
+
+ 		printf("Enter num, n and val: ");
+                scanf("%d %d %d", &num, &n, &pos);
+                
+		res = get_nbits_from_pos(num, n, pos);
+                
+		printf("Result = %d \n", res);
+}
