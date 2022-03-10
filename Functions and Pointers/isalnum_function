@@ -1,0 +1,45 @@
+/*
+Name		:	MK MOOSA KASIM
+Date		: 	22-1-22
+Description	:	WAP to implement your own isalnum() function
+			c-type library functions check whether ch, which must have the value of an unsigned char or EOF, falls into a certain character class according to the current locale.
+isalnum() - checks for an alphanumeric character; it is equivalent to (isalpha(c) || isdigit(c)
+
+Input		:	Enter the character: a
+Output		:	The character 'a' is an alnum character.
+*/
+
+
+#include<stdio.h>
+
+int my_isalnum(int c)
+{
+    if(c>=97 && c<=122 || c>=65 && c<=90 || c>=48 && c<=57)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+
+}
+
+int main()
+{
+    char ch;
+    int ret;
+    printf("Enter the character: ");
+    scanf("%c",&ch);
+    ret = my_isalnum(ch);
+    if(ret==1)
+    {
+        printf("Entered character is alphanumeric character");
+    }
+    else
+    {
+        printf("Entered character is not alphanumeric character");
+
+    }
+
+}
