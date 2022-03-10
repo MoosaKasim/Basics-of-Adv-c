@@ -1,0 +1,48 @@
+/*
+
+Name		:	MK MOOSA KASIM
+Date		:	27-01-2022
+Description	:	WAP to find factorial of given number using recursion
+Input		:	Enter the value of N : 7
+Output		:	Factorial of the given number is 5040
+			
+*/
+
+
+#include<stdio.h>
+#include<stdlib.h>
+
+static int flag = 1;
+
+int main ( )
+{
+	static int number;
+	static int result = 1 ;
+
+	if (flag)
+	{
+		printf("Enter the number:");
+		scanf("%d", &number);
+	
+	
+	if ( number < 0 )
+	{
+	    printf("Invalid Input");
+	    return 1;
+	}
+	flag = 0;
+	}
+		result = result * number-- ;
+	
+		
+		if (number < 1)
+		{
+		    printf("factorial of the given number is %d", result);
+        return 0;
+		}
+        else
+        {
+			main();
+		}
+    }
+		
